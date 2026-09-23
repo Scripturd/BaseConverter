@@ -1,4 +1,4 @@
-﻿namespace BaseConvertor.Common;
+﻿namespace BaseConverter.Common;
 
 public class UiService
 {
@@ -7,37 +7,6 @@ public class UiService
     public UiService(Random random)
     {
         _random = random;
-    }
-
-    public void ClearLastLine()
-    {
-        Console.SetCursorPosition(0, Console.CursorTop - 1);
-        Console.Write(new string(' ', Console.WindowWidth));
-        Console.SetCursorPosition(0, Console.CursorTop);
-    }
-    public void ReplaceLastLine(string text)
-    {
-        int line = Console.CursorTop - 1;
-
-        Console.SetCursorPosition(0, line);
-        Console.Write(text.PadRight(Console.WindowWidth - 1));
-        Console.SetCursorPosition(0, line + 1);
-    }
-    public void ReplaceLine(int top, string text)
-    {
-        int currentTop = Console.CursorTop;
-        int currentLeft = Console.CursorLeft;
-
-        Console.SetCursorPosition(0, top);
-
-        int width = Console.WindowWidth;
-
-        if (text.Length > width)
-            text = text[..width];
-
-        Console.Write(text.PadRight(width));
-
-        Console.SetCursorPosition(currentLeft, currentTop);
     }
 
     public void Clear()
@@ -71,9 +40,11 @@ public class UiService
 
     public string ReadLine()
     {
-        Console.CursorVisible = true;
+        if (!Console.IsOutputRedirected)
+            Console.CursorVisible = true;
         string? input = Console.ReadLine();
-        Console.CursorVisible = false;
+        if (!Console.IsOutputRedirected)
+            Console.CursorVisible = false;
 
         if (input == null)
             return string.Empty;
@@ -83,27 +54,25 @@ public class UiService
 
     public bool Confirm(string question)
     {
-        Print(question);
+        Print(question + " (y/n)");
         string answer = ReadLine();
 
-        return answer.Equals("y", StringComparison.CurrentCultureIgnoreCase);
+        bool answeredYes = answer.Equals("y", StringComparison.CurrentCultureIgnoreCase);
+        bool answeredNo = answer.Equals("n", StringComparison.CurrentCultureIgnoreCase);
+
+        if (!answeredYes && !answeredNo)
+        {
+            Print("Please answer with (y) or (n)");
+            return Confirm(question);
+        }
+
+        return answeredYes;
     }
 
     public int SelectInt(string question, int min = int.MinValue, int max = int.MaxValue)
     {
         Print(question);
-
-
-
-        return AnsiConsole.Prompt(
-            new TextPrompt<int>(question)
-                .Validate(x =>
-                {
-                    if (x < min || x > max)
-                        return ValidationResult.Error($"Enter a number between {min} and {max}.");
-
-                    return ValidationResult.Success();
-                }));
+        return SelectInt(min, max);
     }
     private int SelectInt(int min = int.MinValue, int max = int.MaxValue)
     {
@@ -128,6 +97,45 @@ public class UiService
             return parsedInput;
         else
             return SelectInt(min, max);
+    }
+
+    public NumberSystem SelectNumberSystem()
+    {
+        Radix selectedRadix = SelectRadix("Select a radix");
+
+        Print($"Write a number in radix {selectedRadix}");
+        return SelectNumberSystem(selectedRadix);
+    }
+    private NumberSystem SelectNumberSystem(Radix radix)
+    {
+        string text = ReadLine();
+        if (!text.TryToDigits(out List<Digit> digits))
+        {
+            Print($"\"{text}{radix}\" is not valid.");
+            return SelectNumberSystem(radix);
+        }
+
+        foreach (Digit digit in digits)
+        {
+            if (digit.Value >= radix.Value)
+            {
+                Print($"\"{text}{radix}\" is not valid.");
+                return SelectNumberSystem(radix);
+            }
+        }
+
+        return new NumberSystem(radix, digits);
+    }
+    public Radix SelectRadix(string question)
+    {
+        int value = SelectInt(question, 2, DigitSymbolMap.SymbolCount);
+        return new Radix(value);
+    }
+
+    public void WaitForKeyPress()
+    {
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey(true);
     }
 
     public int SelectString(string question, string[] choices)

@@ -1,0 +1,15 @@
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\bin\Debug\net9.0\BaseConvertor.exe
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\bin\Debug\net9.0\BaseConvertor.deps.json
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\bin\Debug\net9.0\BaseConvertor.runtimeconfig.json
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\bin\Debug\net9.0\BaseConvertor.dll
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\bin\Debug\net9.0\BaseConvertor.pdb
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.AssemblyInfoInputs.cache
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.AssemblyInfo.cs
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.csproj.CoreCompileInputs.cache
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.sourcelink.json
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.dll
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\refint\BaseConvertor.dll
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.pdb
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\BaseConvertor.genruntimeconfig.cache
+C:\Users\08TOP001\source\repos\BaseConverter\BaseConvertor\obj\Debug\net9.0\ref\BaseConvertor.dll

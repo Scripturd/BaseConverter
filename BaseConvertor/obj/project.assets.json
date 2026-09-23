@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\08TOP001\\source\\repos\\BaseConvertor\\BaseConvertor\\BaseConvertor.csproj",
-      "projectName": "BaseConvertor",
-      "projectPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConvertor\\BaseConvertor\\BaseConvertor.csproj",
+      "projectUniqueName": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConverter.csproj",
+      "projectName": "BaseConverter",
+      "projectPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConverter.csproj",
       "packagesPath": "C:\\Users\\08TOP001\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConvertor\\BaseConvertor\\obj\\",
+      "outputPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

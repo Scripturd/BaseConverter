@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConvertor.csproj": {}
+    "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConverter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConvertor.csproj": {
+    "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConverter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConvertor.csproj",
-        "projectName": "BaseConvertor",
-        "projectPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConvertor.csproj",
+        "projectUniqueName": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConverter.csproj",
+        "projectName": "BaseConverter",
+        "projectPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\BaseConverter.csproj",
         "packagesPath": "C:\\Users\\08TOP001\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\08TOP001\\source\\repos\\BaseConverter\\BaseConvertor\\obj\\",
         "projectStyle": "PackageReference",

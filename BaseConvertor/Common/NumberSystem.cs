@@ -2,18 +2,61 @@
 
 public class NumberSystem
 {
-    public Radix Radix { get; }
-    public IReadOnlyList<Digit> Digits { get; }
+    private readonly List<Digit> _digits;
 
-    public NumberSystem(Radix radix, IReadOnlyList<Digit> digits)
+    public Radix Radix { get; }
+    /// <summary>
+    /// The digits from most to least significant, in the order they are written: index 0 is the leftmost digit.
+    /// The last digit is the ones place, so "1A" in radix 16 is stored as [1, A].
+    /// </summary>
+    public IReadOnlyList<Digit> Digits => _digits;
+
+    public Digit this[int index]
     {
-        Radix = radix;
-        Digits = digits;
+        get => index < Digits.Count ? Digits [index] : new Digit(0);
     }
 
-    public void Increase(out int remainder)
+    public NumberSystem(Radix radix, List<Digit> digits)
     {
-        remainder = 0;
+        Radix = radix;
+        _digits = digits;
+    }
+
+    public void Increase()
+    {
+
+    }
+    private NumberSystem Add(int digitIndex, Digit addendDigit)
+    {
+        List<Digit> addendDigits = [];
+        for (int i = 0; i < digitIndex - 1; i++)
+        {
+            addendDigits.Add(new Digit(0));
+        }
+        addendDigits.Add(addendDigit);
+        // If digitIndex is 4 & addend is 1
+        // output: 1000
+
+        NumberSystem addendSystem = new(Radix, addendDigits);
+        return Add(addendSystem);
+    }
+    public NumberSystem Add(NumberSystem other)
+    {
+        if (other.Radix != Radix)
+            throw new InvalidOperationException("The radices don't match!");
+
+        List<Digit> sumDigits = [];
+        List<Digit> carryDigits = [];
+        for (int i = 0; i < other.Digits.Count - 1; i++)
+        {
+            sumDigits.Add(new Digit(0));
+        }
+
+        throw new NotImplementedException();
+    }
+    private void Add(NumberSystem a, NumberSystem b, out NumberSystem sum, out NumberSystem carry)
+    {
+        throw new NotImplementedException();
     }
     public void Add(Digit a, Digit b, out Digit sum, out Digit carry)
     {

@@ -13,6 +13,13 @@ public class Game
 
     public void Start()
     {
+        NumberSystem inputNumberSystem = _uiService.SelectNumberSystem();
+        int decimalValue = inputNumberSystem.GetDecimalValue();
+        //_uiService.Print($"{inputNumberSystem} = {decimalValue}");
 
+        Radix outputRadix = _uiService.SelectRadix("Select a radix to convert to.");
+        NumberSystem outputNumberSystem = decimalValue.ToNumberSystem(outputRadix);
+
+        _uiService.Print($"{inputNumberSystem} = {outputNumberSystem}");
     }
 }

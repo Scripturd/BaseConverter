@@ -17,7 +17,6 @@ public class Game
         int decimalValue = selectedNumberSystem.GetDecimalValue();
 
         _uiService.Print($"{selectedNumberSystem} = {decimalValue}");
-        selectedNumberSystem.Add(new(1), new(1), out var s, out var c);
     }
 
 }
